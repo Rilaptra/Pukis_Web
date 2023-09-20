@@ -1,0 +1,309 @@
+* {
+  border: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+
+:root {
+  --oren: #d89348;
+  --gray: #8f919c;
+  --turqo: #b8d7dc;
+  --brow: #713b1d;
+  --merah: #cf2937;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+}
+
+/* All Page */
+.page {
+  display: flex;
+  width: inherit;
+  min-height: 100vh;
+  /* height: 100vh; */
+}
+
+.product,
+.about {
+  padding-bottom: 50px;
+}
+
+/* Navbar Start*/
+
+nav {
+  display: flex;
+  gap: 20px;
+  writing-mode: vertical-lr;
+  position: fixed;
+  z-index: 999;
+  left: 90px;
+  top: 22%;
+}
+
+nav .button {
+  position: relative;
+  opacity: 0.58;
+}
+
+nav .button.onview {
+  opacity: 1;
+}
+
+nav .button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -2px;
+  right: 100%;
+  border-radius: 10px;
+  background-color: white;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 0.2s ease-in-out;
+}
+
+nav .button.onview::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -2px;
+  right: 100%;
+  border-radius: 10px;
+  background-color: white;
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: all 0.2s ease-in-out;
+}
+
+nav .button:hover {
+  opacity: 1;
+}
+
+nav .button a {
+  font-family: "Montserrat";
+}
+/* Navbar End */
+
+/* Home */
+.home {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: -1;
+  /* widh */
+}
+
+.home bgsma {
+  position: absolute;
+  inset: 0;
+  z-index: -999;
+  opacity: 0.4;
+  background-image: url("/aset/sma3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* WELCOME TO */
+.home h5 {
+  font-family: coco;
+  font-size: 0.8rem;
+  margin-bottom: -1px;
+  letter-spacing: 0.5rem;
+}
+
+/* ECOBIOGRAPHY */
+.home .ecobio {
+  background-image: url("/aset/ecobiography.png");
+  width: 53vw;
+  height: 12vw;
+  background-size: cover;
+}
+
+/* Portfolio */
+.home .portfo {
+  background-image: url("/aset/portfolio.png");
+  background-size: cover;
+  width: 20vw;
+  height: 4.5vw;
+}
+
+.home .creator {
+  position: absolute;
+  bottom: 70px;
+}
+.home .creator p {
+  font-family: "Source Serif 4", serif;
+  font-size: 2vmax;
+}
+
+.home .creator p span {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-left: 30px;
+  border-radius: 50%;
+  margin-bottom: -20px;
+  background-color: white;
+}
+/* Home End */
+
+/* About */
+.about {
+  background-color: var(--oren);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about section {
+  width: 80%;
+  height: 80%;
+}
+
+.about section h2,
+.about section p {
+  transition: all 0.3s ease-in-out;
+  transition-delay: calc(var(--i) * 0.15s);
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+.about gmbr {
+  transition: all 0.3s ease-in-out;
+  transition-delay: calc(var(--i) * 0.15s);
+  transform: translateY(100px) scale(0.5);
+  opacity: 0;
+  margin: auto 0;
+}
+
+.about.onviewpage gmbr {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.page.about.onviewpage h2,
+.about.onviewpage p {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about h2 {
+  font-family: catchy;
+  font-size: 4vmax;
+  letter-spacing: 0.4rem;
+}
+
+.about p {
+  font-family: coco;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  max-width: 40vmax;
+}
+
+.about gmbr {
+  width: 30vmax;
+  height: 40vmax;
+  background-image: url("/aset/pp.png");
+  background-position: center;
+  background-size: cover;
+  float: right;
+}
+
+/* About End */
+
+/* Product */
+
+.product {
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  /* background-color: black; */
+}
+
+.product bg {
+  background-image: url(/aset/mantaf.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.5;
+}
+
+.product h2 {
+  font-family: catchy;
+  font-size: 3vmax;
+  text-align: center;
+  letter-spacing: 0.6rem;
+}
+
+.product .cardholder {
+  display: flex;
+  width: 70%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product cards {
+  margin: auto;
+  max-width: 290px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  transition-delay: calc(var(--i) * 0.15s);
+  margin-bottom: 50px;
+}
+
+.product cards .n {
+  width: 100%;
+  height: 185px;
+  border-radius: 10px;
+}
+
+.product.onviewpage cards {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.product .n {
+  background-image: var(--foto);
+  background-position: center;
+  background-size: cover;
+  filter: brightness(0.7);
+}
+
+.product .box {
+  border: solid 2px white;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  margin-top: 10px;
+  padding: 0 15px;
+  font-family: coco;
+}
+
+.product .box p {
+  font-size: 0.84rem;
+}
+
+.product .box h3 {
+  font-size: 1.5rem;
+  margin-bottom: -18px;
+}
+
+.product .box h5 {
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+/* Product End */
