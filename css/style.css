@@ -108,7 +108,7 @@ nav .button a {
   inset: 0;
   z-index: -999;
   opacity: 0.4;
-  background-image: url("/aset/sma3.jpg");
+  background-image: url("../aset/sma3.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -123,7 +123,7 @@ nav .button a {
 
 /* ECOBIOGRAPHY */
 .home .ecobio {
-  background-image: url("/aset/ecobiography.png");
+  background-image: url("../aset/ecobiography.png");
   width: 53vw;
   height: 12vw;
   background-size: cover;
@@ -131,7 +131,7 @@ nav .button a {
 
 /* Portfolio */
 .home .portfo {
-  background-image: url("/aset/portfolio.png");
+  background-image: url("../aset/portfolio.png");
   background-size: cover;
   width: 20vw;
   height: 4.5vw;
@@ -213,7 +213,7 @@ nav .button a {
 .about gmbr {
   width: 30vmax;
   height: 40vmax;
-  background-image: url("/aset/chick.jpeg");
+  background-image: url("../aset/chick.jpeg");
   background-position: center;
   background-size: cover;
   float: right;
@@ -231,7 +231,7 @@ nav .button a {
 }
 
 .product bg {
-  background-image: url(/aset/mantaf.jpg);
+  background-image: url(../aset/mantaf.jpg);
   background-position: center;
   background-size: cover;
   position: absolute;
