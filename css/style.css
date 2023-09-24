@@ -4,8 +4,6 @@
   text-decoration: none;
   list-style: none;
   color: white;
-  margin: 0;
-  padding: 0;
   background-position: center;
   background-size: cover;
 }
@@ -23,6 +21,7 @@ html {
 }
 
 body {
+  margin: 0;
   background-color: black;
 }
 
