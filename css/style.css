@@ -4,6 +4,10 @@
   text-decoration: none;
   list-style: none;
   color: white;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-size: cover;
 }
 
 :root {
@@ -25,7 +29,7 @@ body {
 /* All Page */
 .page {
   display: flex;
-  width: inherit;
+  width: 100%;
   min-height: 100vh;
   /* height: 100vh; */
 }
@@ -37,12 +41,16 @@ body {
 
 /* Navbar Start*/
 
+span.menubar {
+  visibility: hidden;
+  position: fixed;
+}
 nav {
   display: flex;
   gap: 20px;
   writing-mode: vertical-lr;
   position: fixed;
-  z-index: 999;
+  z-index: 99;
   left: 90px;
   top: 22%;
 }
@@ -66,8 +74,8 @@ nav .button::before {
   border-radius: 10px;
   background-color: white;
   transform: scaleY(0);
-  transform-origin: top;
-  transition: all 0.2s ease-in-out;
+  transform-origin: bottom;
+  transition: transform 0.2s ease-in-out;
 }
 
 nav .button.onview::before {
@@ -81,7 +89,7 @@ nav .button.onview::before {
   background-color: white;
   transform: scaleY(1);
   transform-origin: top;
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 nav .button:hover {
@@ -109,8 +117,6 @@ nav .button a {
   z-index: -999;
   opacity: 0.4;
   background-image: url("../aset/sma3.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
 /* WELCOME TO */
@@ -137,6 +143,7 @@ nav .button a {
   height: 4.5vw;
 }
 
+/* By Kelompok Pukis */
 .home .creator {
   position: absolute;
   bottom: 70px;
@@ -178,14 +185,6 @@ nav .button a {
   opacity: 0;
 }
 
-.about gmbr {
-  transition: all 0.3s ease-in-out;
-  transition-delay: calc(var(--i) * 0.15s);
-  transform: translateY(100px) scale(0.5);
-  opacity: 0;
-  margin: auto 0;
-}
-
 .about.onviewpage gmbr {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -214,9 +213,13 @@ nav .button a {
   width: 30vmax;
   height: 40vmax;
   background-image: url("../aset/chick.jpeg");
-  background-position: center;
-  background-size: cover;
   float: right;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  transition-delay: calc(var(--i) * 0.15s);
+  transform: translateY(100px) scale(0.5);
+  opacity: 0;
+  margin: auto 0;
 }
 
 /* About End */
@@ -227,13 +230,10 @@ nav .button a {
   align-items: center;
   flex-direction: column;
   position: relative;
-  /* background-color: black; */
 }
 
 .product bg {
   background-image: url(../aset/mantaf.jpg);
-  background-position: center;
-  background-size: cover;
   position: absolute;
   inset: 0;
   z-index: -2;
@@ -277,8 +277,6 @@ nav .button a {
 
 .product .n {
   background-image: var(--foto);
-  background-position: center;
-  background-size: cover;
   filter: brightness(0.7);
 }
 
@@ -306,4 +304,153 @@ nav .button a {
   margin-left: 10px;
 }
 
+.product a {
+  position: absolute;
+  right: 20px;
+  padding: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  bottom: 15px;
+  border-radius: 20px;
+  padding: 4px 10px;
+  text-align: center;
+}
+.product a span {
+  font-size: 1.5rem;
+  position: relative;
+  top: 2px;
+}
+
 /* Product End */
+
+/* Media Queries */
+
+/* Mobile */
+@media (max-width: 768px) {
+  span.menubar {
+    visibility: visible;
+    cursor: pointer;
+    opacity: 0.58;
+    font-size: 150%;
+    margin: 10px;
+    margin-top: 0px;
+    padding: 5px;
+    z-index: 99;
+    border: solid white 2px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  #openmenu {
+    margin-top: 9px;
+  }
+  #closemenu {
+    margin-top: 9px;
+    margin-left: 29%;
+  }
+  span.menubar:hover {
+    opacity: 1;
+  }
+  nav {
+    background-color: black;
+    writing-mode: horizontal-tb;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 40%;
+    left: -40%;
+    transition: left 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  nav.clickview {
+    left: 0;
+  }
+  nav #closemenu {
+    visibility: hidden;
+  }
+  nav.clickview #closemenu {
+    visibility: visible;
+  }
+  nav .button:first-child {
+    margin-top: 80px;
+  }
+  nav .button {
+    margin-left: 10px;
+    padding: 10px;
+    width: fit-content;
+  }
+  nav .button::before,
+  nav .button.onview::before {
+    scale: 0;
+  }
+  nav .button::after {
+    content: "";
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  nav .button.onview::after {
+    content: "";
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  nav .button a {
+    font-size: 100%;
+    letter-spacing: 0.1rem;
+  }
+
+  /* Home Page */
+  .home h5 {
+    font-size: 0.6rem;
+    /* margin-bottom: -10px; */
+    letter-spacing: 0.3rem;
+  }
+  .home .ecobio {
+    width: 300px;
+  }
+  .home .portfo {
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+  }
+  .home .creator p {
+    font-size: 1rem;
+  }
+
+  /* About Page */
+  .about {
+    flex-direction: column;
+  }
+  .about gmbr {
+    width: 100%;
+    height: 420px;
+    margin: 20px 0;
+  }
+  .about h2 {
+    font-size: 250%;
+    text-align: center;
+  }
+  .about p {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* Product Page */
+  .product h2 {
+    font-size: 250%;
+    margin-bottom: 80px;
+  }
+}
