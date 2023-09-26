@@ -560,7 +560,20 @@ footer a:active {
   }
 
   /* Other */
+  other a {
+    position: relative;
+  }
+  other a span {
+    opacity: 0;
+  }
+  other contact a svg {
+    left: 39%;
+    /* position: static; */
+    display: flex;
 
+    justify-content: center;
+    align-items: center;
+  }
 
   /* Footer */
   footer p {
