@@ -324,9 +324,9 @@ nav .button a {
 /* Media Queries */
 
 /* PC */
-@media (max-wdith: 1365px) {
-  nav a {
-
+@media (max-wdith: 1360px) {
+  nav .button a {
+    font-size: 200%;
   }
 }
 
