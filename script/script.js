@@ -3,6 +3,7 @@ let navList = document.querySelectorAll("nav .button a");
 let openmenu = document.getElementById('openmenu')
 let closemenu = document.getElementById('closemenu')
 let nav = document.getElementById('nav')
+let cardbox = document.querySelectorAll('.product .box')
 
 window.onscroll = () => {
   menu.forEach((page) => {
@@ -32,4 +33,11 @@ document.addEventListener('click', e => {
   if (!openmenu.contains(e.target) && !closemenu.contains(e.target) && !nav.contains(e.target)) {
     nav.classList.remove('clickview')
   }
+})
+
+cardbox.forEach(c => {
+  c.addEventListener('click', (e) => {
+    const link = 'https://rilaptra.github.io/Pukis_Web/' + c.getAttribute('link')
+    window.location.href = link;
+  })
 })

@@ -6,6 +6,7 @@
   color: white;
   background-position: center;
   background-size: cover;
+  user-select: none;
 }
 
 :root {
@@ -288,6 +289,10 @@ nav .button a {
   font-family: coco;
 }
 
+.product .box:hover {
+  background-color: rgba(255, 255, 255, 0.226);
+}
+
 .product .box p {
   font-size: 0.84rem;
 }
@@ -336,17 +341,27 @@ footer {
   right: 0;
 }
 
+footer p {
+  position: relative;
+}
 footer sosmed {
   position: fixed;
   display: flex;
   gap: 20px;
   right: 30px;
   bottom: 4px;
-  /* margin-top: -10px; */
 }
+
 footer a svg {
   width: 30px;
   height: 30px;
+}
+
+footer a {
+  transition: transform .1s ease-in-out;
+}
+footer a:active {
+  transform: scale(.6);
 }
 
 /* Media Queries */
@@ -354,7 +369,7 @@ footer a svg {
 /* PC */
 @media (max-width: 1920px) {
   nav .button a {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 }
 
