@@ -323,6 +323,13 @@ nav .button a {
 
 /* Media Queries */
 
+/* PC */
+@media (max-wdith: 1365px) {
+  nav a {
+
+  }
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   span.menubar {
