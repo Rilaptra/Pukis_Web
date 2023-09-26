@@ -326,6 +326,59 @@ nav .button a {
 
 /* Product End */
 
+/* Other */
+
+other {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+other h2 {
+  position: absolute;
+  top: 20px;
+  font-family: catchy;
+  font-size: 3vmax;
+  letter-spacing: 1rem;
+  width: 100%;
+  text-align: center;
+}
+other contact {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 5%;
+  align-items: center;
+  justify-content: center;
+}
+
+other contact a {
+  font-family: coco;
+  font-size: 1.2rem;
+  display: flex;
+  border: solid white 2px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 8%;
+  position: relative;
+  transition: letter-spacing 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+other contact a svg {
+  position: absolute;
+  left: 3%;
+  top: 32%;
+}
+
+other contact a:hover {
+  letter-spacing: 0.2rem;
+  background-color: rgba(255, 255, 255, 0.137);
+}
+/* Other End */
+
 /* Footer Copyright */
 
 footer {
@@ -366,59 +419,6 @@ footer a:active {
 
 /* Footer Copyright End */
 
-/* Other */
-
-.other {
-  display: flex;
-  width: 80%;
-  background-color: gray;
-  margin: 0 auto;
-  position: relative;
-}
-
-.other h2 {
-  position: absolute;
-  top: 20px;
-  font-family: catchy;
-  font-size: 3vmax;
-  letter-spacing: 1rem;
-  width: 100%;
-  text-align: center;
-}
-.other contact {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  gap: 5%;
-  align-items: center;
-  justify-content: center;
-}
-
-.other contact a {
-  font-family: coco;
-  font-size: 1.2rem;
-  display: flex;
-  border: solid white 2px;
-  border-radius: 10px;
-  align-items: center;
-  justify-content: center;
-  width: 70%;
-  height: 8%;
-  position: relative;
-  transition: letter-spacing .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.other contact a svg {
-  position: absolute;
-  left: 3%;
-  top: 32%;
-}
-
-.other contact a:hover {
-  letter-spacing: .2rem;
-  background-color: rgba(255, 255, 255, 0.137);
-}
-/* Other End */
 
 /* Media Queries */
 
@@ -557,5 +557,21 @@ footer a:active {
   .product h2 {
     font-size: 250%;
     margin-bottom: 80px;
+  }
+
+  /* Other */
+
+
+  /* Footer */
+  footer p {
+    font-size: 70%;
+  }
+  footer sosmed {
+    gap: 5px;
+    right: 10px;
+  }
+  footer a svg {
+    width: 85%;
+    height: 85%;
   }
 }
