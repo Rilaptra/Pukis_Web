@@ -325,7 +325,8 @@ nav .button a {
 
 footer {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
+  font-family: "Montserrat";
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.267);
@@ -335,12 +336,25 @@ footer {
   right: 0;
 }
 
+footer sosmed {
+  position: fixed;
+  display: flex;
+  gap: 20px;
+  right: 30px;
+  bottom: 4px;
+  /* margin-top: -10px; */
+}
+footer a svg {
+  width: 30px;
+  height: 30px;
+}
+
 /* Media Queries */
 
 /* PC */
 @media (max-width: 1920px) {
   nav .button a {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
