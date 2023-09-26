@@ -325,7 +325,7 @@ nav .button a {
 
 footer {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.267);
@@ -338,9 +338,9 @@ footer {
 /* Media Queries */
 
 /* PC */
-@media (max-wdith: 1360px) {
+@media (max-width: 1920px) {
   nav .button a {
-    font-size: 200%;
+    font-size: 2rem;
   }
 }
 
