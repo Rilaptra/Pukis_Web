@@ -15,6 +15,7 @@
   --turqo: #b8d7dc;
   --brow: #713b1d;
   --merah: #cf2937;
+  --jedacredit: 0.07s;
 }
 
 html {
@@ -128,19 +129,28 @@ nav .button a {
 }
 
 /* ECOBIOGRAPHY */
-.home .ecobio {
-  background-image: url("../aset/ecobiography.png");
-  width: 53vw;
-  height: 12vw;
-  background-size: cover;
+.home h1.ecobio {
+  font-family: catchy;
+  font-size: 6.35rem;
+  text-align: center;
+  font-weight: 100;
+  margin: 0;
+  transition: all .2s ease-out;
+  transform: scale(.7);
+}
+
+.home.onviewpage h1.ecobio {
+  transform: scale(1);
 }
 
 /* Portfolio */
-.home .portfo {
-  background-image: url("../aset/portfolio.png");
-  background-size: cover;
-  width: 20vw;
-  height: 4.5vw;
+.home h2.portfo {
+  font-family: catchy;
+  font-weight: 100;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: -10px;
+  letter-spacing: 0.1px;
 }
 
 /* By Kelompok Pukis */
@@ -153,14 +163,15 @@ nav .button a {
   font-size: 2vmax;
 }
 
-.home .creator p span {
+.home .creator p span.logo {
   display: inline-block;
   width: 50px;
   height: 50px;
-  margin-left: 30px;
-  border-radius: 50%;
+  margin-left: 10px;
+  border-radius: 20px;
   margin-bottom: -20px;
-  background-color: white;
+  background-image: url(../aset/web-icon.svg);
+  background-color: rgba(255, 255, 255, 0.24);
 }
 /* Home End */
 
@@ -198,6 +209,7 @@ nav .button a {
 
 .about h2 {
   font-family: catchy;
+  font-weight: 100;
   font-size: 4vmax;
   letter-spacing: 0.4rem;
 }
@@ -242,9 +254,16 @@ nav .button a {
 
 .product h2 {
   font-family: catchy;
+  font-weight: 100;
   font-size: 3vmax;
   text-align: center;
   letter-spacing: 0.6rem;
+  transition: all .2s ease-out;
+  transform: scale(.7);
+}
+
+.product.onviewpage h2 {
+  transform: scale(1);
 }
 
 .product .cardholder {
@@ -259,7 +278,8 @@ nav .button a {
   max-width: 290px;
   transform: translateY(50px);
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  /* transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+  transition: all 0.2s cubic-bezier(0.11, -0.77, 0, 1.37);
   transition-delay: calc(var(--i) * 0.15s);
   margin-bottom: 50px;
 }
@@ -332,23 +352,34 @@ other {
   display: flex;
   width: 80%;
   margin: 0 auto;
+  flex-direction: column;
   position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 other h2 {
   position: absolute;
   top: 20px;
   font-family: catchy;
+  font-weight: 100;
   font-size: 3vmax;
   letter-spacing: 1rem;
   width: 100%;
   text-align: center;
+  transition: all .2s ease-out;
+  transform: scale(.7);
 }
+
+.other.onviewpage other h2 {
+  transform: scale(1);
+}
+
 other contact {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  gap: 5%;
+  gap: 30px;
+  width: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -362,22 +393,324 @@ other contact a {
   align-items: center;
   justify-content: center;
   width: 70%;
-  height: 8%;
+  height: 80px;
   position: relative;
-  transition: letter-spacing 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  z-index: 0;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(200px);
+  opacity: 0;
+  transition-delay: calc(var(--jeda) * var(--jedacredit));
+}
+
+.other.onviewpage other contact a {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+other contact a span {
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 other contact a svg {
   position: absolute;
   left: 3%;
   top: 32%;
+  transition: stroke 0.3s ease-in-out;
 }
 
 other contact a:hover {
+  border-radius: 20px;
+}
+other contact a:hover span {
   letter-spacing: 0.2rem;
-  background-color: rgba(255, 255, 255, 0.137);
+}
+
+other contact a:nth-child(1):before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: white;
+}
+
+other contact a:nth-child(2):before,
+other contact a:nth-child(3):before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(to right, rgb(255, 123, 0), rgb(170, 2, 170));
+}
+
+other contact a::before {
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: right;
+  border-radius: 100px;
+  inset: -10%;
+}
+
+other contact a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+other contact a:nth-child(1):hover span,
+other contact a:nth-child(1):hover svg {
+  color: black;
+  stroke: black;
 }
 /* Other End */
+
+/* Credits */
+
+.credits {
+  overflow: hidden;
+  position: relative;
+}
+
+.credits .bg {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background-image: url(../aset/bandongan.jpg);
+  opacity: 0.5;
+}
+
+/* Credit Template Grid */
+.credits credit {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "h t t"
+    "f s s"
+    "m m m";
+  width: 88%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+/* Special Thanks */
+credit h1 {
+  font-family: catchy;
+  font-size: clamp(2rem, 5.5vmax, 5rem);
+  letter-spacing: 0.2rem;
+  font-weight: 100;
+  grid-area: h;
+  margin: 45.5px 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - (100% - 310px));
+}
+
+credit h1 span {
+  opacity: 0;
+}
+
+.credits.onviewpage credit h1 span {
+  opacity: 1;
+}
+
+/* Thanks */
+credit thank {
+  grid-area: t;
+  height: max-content;
+  margin-top: 45.5px;
+  margin-left: 20px;
+  width: 675px;
+}
+
+credit thank p {
+  transition: all 0.2s ease-in-out;
+  transition-delay: calc(var(--jeda) * var(--jedacredit));
+  transform: translateY(-100px);
+  opacity: 0;
+}
+
+.credits.onviewpage credit thank p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Fasilitator */
+credit fasili {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -100px;
+  grid-area: f;
+}
+
+credit fasili h3 {
+  font-family: "Forum";
+  font-weight: 100;
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease-in-out;
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+credit fasili p {
+  font-family: "Cardo";
+  font-weight: 100;
+  margin: 0;
+  transition: all 0.2s ease-in-out;
+  transition-delay: calc(var(--jeda) * var(--jedacredit));
+  font-size: calc(0.625rem + 7px);
+  letter-spacing: 0.5px;
+}
+
+credit fasili p:nth-child(even) {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+credit fasili p:nth-child(odd) {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+.credits.onviewpage credit fasili h3,
+.credits.onviewpage credit fasili h3,
+.credits.onviewpage credit fasili p {
+  transform: translateX(0);
+  opacity: 1;
+}
+/* Fasilitor End */
+
+/* Social */
+
+credit social {
+  grid-area: s;
+  display: grid;
+  height: 140px;
+  grid-template-columns: 15% 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "l m1 m2";
+  position: relative;
+  border: solid 1px white;
+  /* border-radius: 20px; */
+  margin: 0 20px;
+  margin-right: 12%;
+}
+
+credit social .ig1 {
+  grid-area: m1;
+}
+
+credit social .ig2 {
+  grid-area: m2;
+}
+
+credit social div {
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+credit social div a {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  font-family: "Montserrat";
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  transition-delay: calc(var(--jeda) * var(--jedacredit));
+  letter-spacing: 0.1rem;
+  transform: scale(0);
+}
+
+.credits.onviewpage credit social div a {
+  transform: scale(1);
+}
+
+credit social div a:hover {
+  text-decoration: underline;
+}
+
+credit social .ig {
+  grid-area: l;
+  --size: 100%;
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+credit social svg {
+  width: 100%;
+  height: auto;
+  stroke-width: 1.2px;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-delay: calc(var(--jeda) * var(--jedacredit));
+  position: relative;
+  transform: scale(0);
+}
+
+.credits.onviewpage credit social svg {
+  transform: scale(1);
+}
+
+/* Social End */
+
+/* Members */
+credit members {
+  grid-area: m;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  position: relative;
+  padding-bottom: 20%;
+}
+
+credit members h2 {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  font-family: "Forum";
+  font-weight: 100;
+  margin-top: 15px;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-delay: calc(var(--jeda) * var(--jedacredit));
+  filter: blur(50px);
+}
+
+.credits.onviewpage credit members h2 {
+  filter: blur(0);
+}
+
+credit members div {
+  margin-top: 35px;
+}
+
+credit members div h4 {
+  font-family: "Cardo";
+  font-weight: 100;
+  font-size: 1.1rem;
+  letter-spacing: calc(1rem * 0.0625);
+  transform: translateY(100px);
+  transition: all 0.2s ease-in-out;
+  transition-delay: calc(var(--jeda) * var(--jedacredit));
+  opacity: 0;
+}
+
+.credits.onviewpage credit members div h4 {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Members End */
+
+/* Credits End */
 
 /* Footer Copyright */
 
@@ -396,6 +729,7 @@ footer {
 
 footer p {
   position: relative;
+  letter-spacing: 0.02rem;
 }
 footer sosmed {
   position: fixed;
@@ -419,18 +753,17 @@ footer a:active {
 
 /* Footer Copyright End */
 
-
 /* Media Queries */
 
-/* PC */
-@media (max-width: 1920px) {
+/* Wide Screen */
+@media (width >= 1920px) {
   nav .button a {
     font-size: 1.35rem;
   }
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (width < 768px) {
   span.menubar {
     visibility: visible;
     cursor: pointer;
@@ -520,16 +853,15 @@ footer a:active {
   /* Home Page */
   .home h5 {
     font-size: 0.6rem;
-    /* margin-bottom: -10px; */
+    margin-bottom: 10px;
     letter-spacing: 0.3rem;
   }
-  .home .ecobio {
-    width: 300px;
+  .home h1.ecobio {
+    font-size: 2.5rem;
   }
-  .home .portfo {
-    width: 150px;
-    height: 30px;
-    margin-top: 10px;
+  .home h2.portfo {
+    margin: 0;
+    font-size: 1.3rem;
   }
   .home .creator p {
     font-size: 1rem;
@@ -562,17 +894,80 @@ footer a:active {
   /* Other */
   other a {
     position: relative;
+    height: 50px;
   }
   other a span {
-    opacity: 0;
+    font-size: 80%;
   }
   other contact a svg {
-    left: 39%;
-    /* position: static; */
+    left: 0;
+    margin-left: 20px;
     display: flex;
+  }
+  other contact a::before {
+    transition: transform 0.3s ease-in-out;
+  }
+  other contact span {
+    transition: 0.3s ease-in-out;
+  }
 
+  .credits credit {
+    overflow: visible;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "h"
+      "t"
+      "f"
+      "s"
+      "m";
+    width: 90%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  credit h1 {
+    margin-top: 80px;
+    margin-bottom: 0;
+    width: 100%;
     justify-content: center;
+  }
+  credit h1 span {
+    opacity: 1;
+  }
+  .credits.onviewpage credit h1 span {
+    opacity: 1;
+  }
+  credit thank {
+    text-align: center;
+    margin: 0;
+    width: auto;
+  }
+  credit fasili {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+  credit social {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "l l"
+      "m1 m2";
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+  credit social .ig {
+    padding-bottom: 0;
+  }
+  credit social .ig svg {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: static;
     align-items: center;
+  }
+  credit social div a {
+    font-size: 90%;
   }
 
   /* Footer */
