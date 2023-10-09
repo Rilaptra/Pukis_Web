@@ -15,7 +15,7 @@
   --turqo: #b8d7dc;
   --brow: #713b1d;
   --merah: #cf2937;
-  --jedacredit: 0.07s;
+  --jedacredit: 50ms;
 }
 
 html {
@@ -382,6 +382,7 @@ other contact {
   width: 100%;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 other contact a {
@@ -398,7 +399,7 @@ other contact a {
   overflow: hidden;
   z-index: 0;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform: translateX(200px);
+  transform: translateX(100px);
   opacity: 0;
   transition-delay: calc(var(--jeda) * var(--jedacredit));
 }
@@ -464,15 +465,15 @@ other contact a:nth-child(1):hover svg {
 /* Credits */
 
 .credits {
-  overflow: hidden;
   position: relative;
 }
 
 .credits .bg {
   position: absolute;
   inset: 0;
+  height: 100%;
   z-index: -3;
-  background-image: url(../aset/bandongan.jpg);
+  background-image: url(../aset/taman.jpg);
   opacity: 0.5;
 }
 
@@ -911,8 +912,8 @@ footer a:active {
     transition: 0.3s ease-in-out;
   }
 
+  /* Credits Page */
   .credits credit {
-    overflow: visible;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
@@ -926,13 +927,11 @@ footer a:active {
     transform: translateX(50%);
   }
   credit h1 {
-    margin-top: 80px;
-    margin-bottom: 0;
     width: 100%;
     justify-content: center;
   }
   credit h1 span {
-    opacity: 1;
+    opacity: 0;
   }
   .credits.onviewpage credit h1 span {
     opacity: 1;
@@ -952,8 +951,8 @@ footer a:active {
     grid-template-areas:
       "l l"
       "m1 m2";
+      margin: 0 0;
     margin-bottom: 20px;
-    margin-right: 0;
   }
   credit social .ig {
     padding-bottom: 0;
