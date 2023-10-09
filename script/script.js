@@ -8,7 +8,7 @@ const pukis = document.getElementById("pukis");
 const kelas = document.getElementById("kelas");
 const special = document.getElementById('special');
 const h1credit = document.querySelector(".credits credit h1");
-alert(window.innerWidth + ' ' + window.innerHeight)
+// alert(window.innerWidth + ' ' + window.innerHeight)
 // HP = 414, 809
 
 if (window.innerWidth < 768) {
@@ -20,7 +20,7 @@ h1credit.innerHTML = h1credit.innerText
   .split("")
   .map(
     (letter, i) =>
-      `<span style="transition-delay: ${i * 100}ms">${letter}</span>`
+      `<span style="transition-delay: ${i * 80}ms">${letter}</span>`
   )
   .join("");
 
