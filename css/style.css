@@ -135,8 +135,8 @@ nav .button a {
   text-align: center;
   font-weight: 100;
   margin: 0;
-  transition: all .2s ease-out;
-  transform: scale(.7);
+  transition: all 0.2s ease-out;
+  transform: scale(0.7);
 }
 
 .home.onviewpage h1.ecobio {
@@ -258,8 +258,8 @@ nav .button a {
   font-size: 3vmax;
   text-align: center;
   letter-spacing: 0.6rem;
-  transition: all .2s ease-out;
-  transform: scale(.7);
+  transition: all 0.2s ease-out;
+  transform: scale(0.7);
 }
 
 .product.onviewpage h2 {
@@ -367,8 +367,8 @@ other h2 {
   letter-spacing: 1rem;
   width: 100%;
   text-align: center;
-  transition: all .2s ease-out;
-  transform: scale(.7);
+  transition: all 0.2s ease-out;
+  transform: scale(0.7);
 }
 
 .other.onviewpage other h2 {
@@ -576,7 +576,6 @@ credit fasili p:nth-child(odd) {
   opacity: 0;
 }
 
-.credits.onviewpage credit fasili h3,
 .credits.onviewpage credit fasili h3,
 .credits.onviewpage credit fasili p {
   transform: translateX(0);
@@ -925,25 +924,35 @@ footer a:active {
     width: 90%;
     right: 50%;
     transform: translateX(50%);
+    height: 100%;
   }
   credit h1 {
     width: 100%;
     justify-content: center;
+    margin-bottom: 0;
   }
   credit h1 span {
     opacity: 0;
-  }
-  .credits.onviewpage credit h1 span {
-    opacity: 1;
+    height: min-content;
   }
   credit thank {
     text-align: center;
     margin: 0;
     width: auto;
   }
+  credit thank p {
+    font-size: 80%;
+  }
   credit fasili {
     margin-left: 0;
     margin-bottom: 20px;
+    font-size: 80%;
+  }
+  credit fasili h3 {
+    font-size: 1.5rem;
+  }
+  credit fasili p {
+    font-size: 1rem;
   }
   credit social {
     grid-template-columns: 1fr 1fr;
@@ -951,8 +960,7 @@ footer a:active {
     grid-template-areas:
       "l l"
       "m1 m2";
-      margin: 0 0;
-    margin-bottom: 20px;
+    margin: 0 0;
   }
   credit social .ig {
     padding-bottom: 0;
@@ -967,6 +975,16 @@ footer a:active {
   }
   credit social div a {
     font-size: 90%;
+  }
+  credit members {
+    position: relative;
+    top: 20px;
+  }
+  credit members h2 {
+    font-size: 1.5rem;
+  }
+  credit members div h4 {
+    font-size: 1rem;
   }
 
   /* Footer */
