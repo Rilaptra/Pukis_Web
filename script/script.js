@@ -6,7 +6,7 @@ const nav = document.getElementById("nav");
 const cardbox = document.querySelectorAll(".product .box");
 const pukis = document.getElementById("pukis");
 const kelas = document.getElementById("kelas");
-const special = document.getElementById('special');
+const special = document.getElementById("special");
 const h1credit = document.querySelector(".credits credit h1");
 // alert(window.innerWidth + ' ' + window.innerHeight)
 // HP = 414, 809
@@ -60,8 +60,7 @@ document.addEventListener("click", (e) => {
 
 cardbox.forEach((c) => {
   c.addEventListener("click", (e) => {
-    const link =
-      "https://rilaptra.github.io/Pukis_Web/" + c.getAttribute("link");
+    const link = window.location.href + "/" + c.getAttribute("link");
     window.location.href = link;
   });
 });
