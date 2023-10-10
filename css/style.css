@@ -224,7 +224,7 @@ nav .button a {
 .about gmbr {
   width: 30vmax;
   height: 40vmax;
-  background-image: url("../aset/chick.jpeg");
+  background-image: url("../aset/we.jpeg");
   float: right;
   border-radius: 20px;
   transition: all 0.3s ease-in-out;
@@ -505,6 +505,10 @@ credit h1 {
   width: calc(100% - (100% - 310px));
 }
 
+.credits.onviewpage credit h1 {
+  top: 0%;
+}
+
 credit h1 span {
   opacity: 0;
 }
@@ -520,6 +524,7 @@ credit thank {
   margin-top: 45.5px;
   margin-left: 20px;
   width: 675px;
+  overflow: hidden;
 }
 
 credit thank p {
@@ -620,7 +625,7 @@ credit social div a {
   margin: 0;
   font-family: "Montserrat";
   text-align: center;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition-delay: calc(var(--jeda) * var(--jedacredit));
   letter-spacing: 0.1rem;
   transform: scale(0);
@@ -667,7 +672,8 @@ credit members {
   grid-template-columns: 1fr 1fr;
   text-align: center;
   position: relative;
-  padding-bottom: 20%;
+  overflow: hidden;
+  margin-top: -25px;
 }
 
 credit members h2 {
@@ -678,7 +684,7 @@ credit members h2 {
   justify-content: center;
   font-family: "Forum";
   font-weight: 100;
-  margin-top: 15px;
+  margin-top: 0;
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition-delay: calc(var(--jeda) * var(--jedacredit));
   filter: blur(50px);
@@ -689,7 +695,7 @@ credit members h2 {
 }
 
 credit members div {
-  margin-top: 35px;
+  margin-top: 15px;
 }
 
 credit members div h4 {
@@ -914,7 +920,7 @@ footer a:active {
   /* Credits Page */
   .credits credit {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, min-content);
     grid-template-areas:
       "h"
       "t"
@@ -929,6 +935,7 @@ footer a:active {
   credit h1 {
     width: 100%;
     justify-content: center;
+    margin-top: 40px;
     margin-bottom: 0;
   }
   credit h1 span {
@@ -944,8 +951,8 @@ footer a:active {
     font-size: 80%;
   }
   credit fasili {
-    margin-left: 0;
-    margin-bottom: 20px;
+    margin: 0;
+    margin-bottom: 10px;
     font-size: 80%;
   }
   credit fasili h3 {
@@ -973,15 +980,23 @@ footer a:active {
     position: static;
     align-items: center;
   }
+  credit social div {
+    padding: 0;
+  }
   credit social div a {
     font-size: 90%;
   }
   credit members {
     position: relative;
-    top: 20px;
+    top: 15px;
+    margin: 0;
   }
   credit members h2 {
     font-size: 1.5rem;
+    margin-top: 0px;
+  }
+  credit members div {
+    margin-top: 35px;
   }
   credit members div h4 {
     font-size: 1rem;
