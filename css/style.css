@@ -245,7 +245,7 @@ nav .button a {
 }
 
 .product bg {
-  background-image: url(../aset/mantaf.jpg);
+  background-image: url(../aset/pendopo.jpg);
   position: absolute;
   inset: 0;
   z-index: -2;
@@ -323,6 +323,7 @@ nav .button a {
 
 .product .box p {
   font-size: 0.84rem;
+  font-family: cocon;
 }
 
 .product .box h3 {
