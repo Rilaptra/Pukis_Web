@@ -60,7 +60,7 @@ document.addEventListener("click", (e) => {
 
 cardbox.forEach((c) => {
   c.addEventListener("click", (e) => {
-    const link = window.location.href + "/" + c.getAttribute("link");
+    const link = "https://rilaptra.github.io/Pukis_Web/" + c.getAttribute("link");
     window.location.href = link;
   });
 });
