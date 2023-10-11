@@ -290,6 +290,14 @@ nav .button a {
   border-radius: 10px;
 }
 
+.product cards:nth-child(2) .n {
+  height: 290px;
+  width: 185px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .product.onviewpage cards {
   transform: translateY(0);
   opacity: 1;
