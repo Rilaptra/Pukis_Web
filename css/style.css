@@ -157,6 +157,9 @@ nav .button a {
 .home .creator {
   position: absolute;
   bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: -25px;
 }
 .home .creator p {
   font-family: "Source Serif 4", serif;
@@ -164,15 +167,27 @@ nav .button a {
 }
 
 .home .creator p span.logo {
-  display: inline-block;
+  display: inline-flex;
   width: 50px;
   height: 50px;
   margin-left: 10px;
   border-radius: 20px;
-  margin-bottom: -20px;
-  background-image: url(../aset/web-icon.svg);
   background-color: rgba(255, 255, 255, 0.24);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  justify-content: center;
+  align-items: center;
 }
+
+.home .creator p span.logo img {
+  display: inline-flex;
+  --s: 120%;
+  width: var(--s);
+  height: var(--s);
+  margin-top: -2px;
+}
+
 /* Home End */
 
 /* About */
@@ -290,12 +305,17 @@ nav .button a {
   border-radius: 10px;
 }
 
-.product cards:nth-child(2) .n {
+.product cards:nth-child(2) .n,
+.product cards:nth-child(3) .n {
   height: 290px;
   width: 185px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.product cards:nth-child(3) .n {
+  height: 275px;
 }
 
 .product.onviewpage cards {
