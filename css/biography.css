@@ -1,0 +1,362 @@
+* {
+  border: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  background-position: center;
+  background-size: cover;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --oren: #d89348;
+  --gray: #8f919c;
+  --turqo: #b8d7dc;
+  --brow: #713b1d;
+  --merah: #cf2937;
+  --jedacredit: 50ms;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+  position: relative;
+}
+
+bg {
+  background: url("../aset/sma3atas.jpg");
+  position: fixed;
+  inset: 0;
+  opacity: 0.8;
+  z-index: -99;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Header */
+header li,
+header a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #111111;
+  border-bottom: #222 solid 2px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-family: catchy;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-size: 2rem;
+}
+
+header ul li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+header ul li a {
+  transition: all 0.2s ease;
+  opacity: 0.6;
+}
+header ul li a:hover {
+  opacity: 1;
+}
+header ul li a:active {
+  color: red;
+}
+header ul li a.clicked {
+  color: red;
+  opacity: 1;
+}
+
+header svg {
+  position: absolute;
+  opacity: 0;
+}
+
+header logo {
+  --size: 5rem;
+  width: var(--size);
+  height: var(--size);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../aset/pukis-icon-putih.png");
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+/* Header End */
+
+/* Container */
+.container {
+  background-color: #00000099;
+  padding: 30px;
+  border-radius: 20px;
+  display: grid;
+  position: relative;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "p a"
+    "b b";
+  min-height: 100vh;
+  width: 90%;
+  margin: auto;
+}
+
+/* Photos */
+.photos {
+  grid-area: p;
+  padding: 1.25rem;
+}
+
+.photos .imgs {
+  aspect-ratio: 4/3;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.photos .imgs img {
+  width: 100%;
+  position: absolute;
+  transition: transform 0.5s ease;
+  border-radius: inherit;
+}
+
+.photos svg {
+  position: absolute;
+  --size: 50px;
+  width: var(--size);
+  height: var(--size);
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+  z-index: 9;
+}
+
+.photos svg:hover {
+  opacity: 0.6;
+}
+.photos svg:active {
+  opacity: 1;
+}
+
+.photos .feather-chevron-left {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.photos .feather-chevron-right {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Photos End */
+
+/* About */
+.about {
+  grid-area: a;
+  padding: 1.25rem;
+}
+
+.about #nama {
+  font-family: catchy;
+  font-weight: 100;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.1rem;
+  font-size: 2.5rem;
+}
+
+.about #pekerjaan {
+  font-family: "Montserrat";
+  font-weight: 800;
+  margin-bottom: 1rem;
+  font-style: italic;
+  font-size: 1.45rem;
+  color: red;
+}
+
+.about #sinopsis {
+  font-family: "Montserrat";
+  font-size: 1.35rem;
+}
+/* About End */
+
+/* Main Paragraph ( Biography ) */
+.biography {
+  grid-area: b;
+  padding: 0 1.25rem;
+  border-top: #ffffff99 solid 3px;
+  padding-top: 1rem;
+}
+
+.biography h1 {
+  font-family: catchy;
+  text-align: center;
+  font-weight: 100;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.biography #narasi {
+  text-align: justify;
+  font-family: "Forum";
+  font-size: 1.35rem;
+  text-indent: 5%;
+  font-weight: 100;
+}
+/* Main Paragraph ( Biography ) End */
+
+/* Container End */
+
+/* Footer Copyright */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat";
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.267);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+}
+
+footer p {
+  position: relative;
+  letter-spacing: 0.02rem;
+}
+footer sosmed {
+  position: fixed;
+  display: flex;
+  gap: 20px;
+  right: 30px;
+  bottom: 4px;
+}
+
+footer a svg {
+  width: 30px;
+  height: 30px;
+}
+
+footer a {
+  transition: transform 0.1s ease-in-out;
+}
+footer a:active {
+  transform: scale(0.6);
+}
+
+/* Footer Copyright End */
+
+@media (width < 768px) {
+  /* Nav Header */
+
+  header h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  header ul {
+    position: fixed;
+    left: -100%;
+    width: 40%;
+    top: 0;
+    /* bottom: 0; */
+    background-color: #222;
+    z-index: 999;
+    transition: 0.5s all ease-in-out;
+  }
+  header ul li {
+    display: block;
+    padding: 20px;
+  }
+  header ul {
+    border-bottom-right-radius: 30px;
+  }
+  header svg {
+    opacity: 1;
+  }
+  header svg:active {
+    stroke: red;
+  }
+  header ul.viewmenu {
+    left: 0;
+  }
+  header logo {
+    left: unset;
+    transform: translateX(0);
+    right: 0;
+    --size: 3.5rem;
+  }
+
+  /* Container */
+  .container {
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "p"
+      "a"
+      "b";
+  }
+
+  .photos {
+    padding: 0;
+  }
+  .photos .imgs img {
+    border-radius: 10px;
+  }
+
+  /* About */
+  .about {
+    text-align: center;
+  }
+
+  /* Biography */
+  .biography #narasi {
+    font-weight: 100;
+    letter-spacing: 0.8px;
+  }
+
+  /* Footer */
+  footer p {
+    font-size: 70%;
+  }
+  footer sosmed {
+    gap: 5px;
+    right: 10px;
+  }
+  footer a svg {
+    width: 85%;
+    height: 85%;
+  }
+}
