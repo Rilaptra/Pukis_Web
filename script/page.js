@@ -5,7 +5,7 @@ const page = {
   sinopsis: document.getElementById("sinopsis"),
   narasi: document.getElementById("narasi"),
 };
-const View = window.location.href.split("?page=")[1];
+const View = new URLSearchParams(window.location.search)
 const buttons = document.querySelectorAll("header ul li a");
 
 // functions
@@ -27,9 +27,9 @@ function button(type) {
 }
 let images;
 let pageImages;
-switch (View) {
+switch (View.get("page")) {
   // Pak Prasojo
-  case "pak&prasojo":
+  case "pak-prasojo":
     // Images
     images =
       '<img src="aset/pakprasojo-profil.jpeg" alt="pakprasojo-profil.jpeg" class="slide" />';
@@ -57,7 +57,7 @@ switch (View) {
     break;
 
   // Pak Widodo
-  case "pak&widodo":
+  case "pak-widodo":
     // Images
     images =
       '<img src="aset/pakwidodo-profil2.jpeg" alt="pakwidodo-profil.jpeg" class="slide" />';
@@ -82,7 +82,7 @@ switch (View) {
     break;
 
   // Pak Sumiaji
-  case "pak&sumiaji":
+  case "pak-sumiaji":
     // Images
     images =
       '<img src="aset/paksumiaji-profil.jpeg" alt="paksumiaji-profil.jpeg" class="slide" />';
