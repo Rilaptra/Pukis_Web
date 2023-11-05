@@ -8,8 +8,8 @@ const pukis = document.getElementById("pukis");
 const kelas = document.getElementById("kelas");
 const special = document.getElementById("special");
 const h1credit = document.querySelector(".credits credit h1");
-// alert(window.innerWidth + ' ' + window.innerHeight)
-// HP = 414, 809
+
+window.location.href = window.location.href.substring(0, window.location.href.length - window.location.search.length)
 
 if (window.innerWidth < 768) {
   pukis.innerHTML = "SMANAGA IG";
@@ -60,8 +60,6 @@ document.addEventListener("click", (e) => {
 
 cardbox.forEach((c) => {
   c.addEventListener("click", (e) => {
-  	
-    window.location.href = c.getAttribute("link");
-
+    window.location.href = window.location.href + e.getAttribute("link")
   });
 });
