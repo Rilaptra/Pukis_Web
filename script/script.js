@@ -61,7 +61,7 @@ document.addEventListener("click", (e) => {
 });
 
 cardbox.forEach((c) => {
-  c.addEventListener("click", (e) => {
-    window.location.href = window.location.href + e.getAttribute("link")
+  c.addEventListener("click", () => {
+    window.location.href = window.location.href + c.getAttribute("link")
   });
 });
