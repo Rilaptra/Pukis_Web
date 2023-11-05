@@ -9,7 +9,9 @@ const kelas = document.getElementById("kelas");
 const special = document.getElementById("special");
 const h1credit = document.querySelector(".credits credit h1");
 
-window.location.href = window.location.href.substring(0, window.location.href.length - window.location.search.length)
+if (window.location.href != "https://rilaptra.github.io/Pukis_Web/") {
+  window.location.href = "https://rilaptra.github.io/Pukis_Web/";
+}
 
 if (window.innerWidth < 768) {
   pukis.innerHTML = "SMANAGA IG";
