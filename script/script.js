@@ -65,19 +65,3 @@ cardbox.forEach((c) => {
     window.location.href = window.location.href.split("#')[0] + c.getAttribute("link")
   });
 });
-
-
-let clickCount = 0;
-const logo = document.getElementById("logos");
-const logoImg = logo.querySelector("#logos img");
-logo.addEventListener("click", () => {
-  clickCount++;
-  if (clickCount % 2 === 1) {
-    logoImg.style.filter = "invert(100%)";
-  } else {
-    logoImg.style.filter = "none";
-  }
-  if (clickCount >= 5) {
-    window.location.href = "https://bit.ly/The_Legend_Of_Singasari";
-  }
-});
