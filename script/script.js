@@ -48,7 +48,7 @@ window.onscroll = () => {
 
 let clickCount = 0;
 const logo = document.getElementById("logos");
-const logoImg = logo.querySelector("img");
+const logoImg = logo.querySelector("#logos img");
 logo.addEventListener("click", function() {
   clickCount++;
   if (clickCount % 2 === 1) {
