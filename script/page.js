@@ -117,7 +117,7 @@ switch (View.get("page")) {
     alert("Not Found !");
     window.location.href = `${
       window.location.href.split("biography.html")[0]
-    }biography.html?page=pak&prasojo`;
+    }biography.html?page=pak-prasojo`;
     break;
 }
 
