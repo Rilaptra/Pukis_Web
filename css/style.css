@@ -25,6 +25,8 @@ html {
 body {
   margin: 0;
   background-color: black;
+  position: relative;
+  z-index: -9999;
 }
 
 /* All Page */
