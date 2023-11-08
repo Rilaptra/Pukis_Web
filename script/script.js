@@ -46,6 +46,21 @@ window.onscroll = () => {
   });
 };
 
+let clickCount = 0;
+const logo = document.getElementById("logos");
+const logoImg = logo.querySelector("img");
+logo.addEventListener("click", function() {
+  clickCount++;
+  if (clickCount % 2 === 1) {
+    logoImg.style.filter = "invert(100%)";
+  } else {
+    logoImg.style.filter = "none";
+  }
+  if (clickCount >= 5) {
+    window.location.href = "https://bit.ly/The_Legend_Of_Singasari";
+  }
+});
+
 // Hamburger menu for Mobile
 tooglenav = () => {
   nav.classList.toggle("clickview");
@@ -62,6 +77,6 @@ document.addEventListener("click", (e) => {
 
 cardbox.forEach((c) => {
   c.addEventListener("click", () => {
-    window.location.href = window.location.href.split("#')[0] + c.getAttribute("link")
+    window.location.href = window.location.href.split("#")[0] + c.getAttribute("link")
   });
 });
