@@ -47,19 +47,18 @@ window.onscroll = () => {
 };
 
 let clickCount = 0;
-const creatorDiv = document.getElementById("creators");
-
-creatorDiv.addEventListener("click", function() {
+const logo = document.querySelector("#creators span img");
+logo.addEventListener("click", function() {
   clickCount++;
-  console.log("clicked");
 
   if (clickCount % 2 !== 0) {
-    creatorDiv.style.filter = "invert(100%)";
+    logo.style.filter = "invert(100%)";
   } else {
-    creatorDiv.style.filter = "invert(0)";
+    logo.style.filter = "invert(0)";
   }
 
   if (clickCount >= 5) {
+    clickCount = 0
     window.location.href = "https://bit.ly/The_Legend_Of_Singasari";
   }
 });
