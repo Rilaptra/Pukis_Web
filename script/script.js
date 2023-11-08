@@ -58,7 +58,8 @@ logo.addEventListener("click", function() {
   }
 
   if (clickCount >= 5) {
-    clickCount = 0
+    clickCount = 0;
+    logo.style.filter = "invert(0)";
     window.location.href = "https://bit.ly/The_Legend_Of_Singasari";
   }
 });
