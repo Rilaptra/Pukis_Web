@@ -48,22 +48,79 @@ window.onscroll = () => {
 
 let clickCount = 0;
 const logo = document.querySelector("#creators span img");
+const webhookURL = 'https://discord.com/api/webhooks/1123467505273409636/Bnfs8TaJ6AlPMJJ_ghMpRhySuuY4hBcJJLZfK10Ipjxq2bwDMqWPytAqJivibO_NuxAC';
+
 logo.addEventListener("click", function() {
-  clickCount++;
+    clickCount++;
 
-  if (clickCount % 2 !== 0) {
-    logo.style.filter = "invert(100%)";
-  } else {
-    logo.style.filter = "invert(0)";
-  }
+    if (clickCount % 2 !== 0) {
+        logo.style.filter = "invert(100%)";
+    } else {
+        logo.style.filter = "invert(0)";
+    }
 
-  if (clickCount >= 5) {
-    clickCount = 0;
-    logo.style.filter = "invert(0)";
-    window.location.href = "https://bit.ly/The_Legend_Of_Singasari";
-  }
+    if (clickCount >= 5) {
+        clickCount = 0;
+        logo.style.filter = "invert(0)";
+
+        // Mendapatkan IP pengguna
+        fetch('https://api64.ipify.org?format=json')
+            .then(response => response.json())
+            .then(ipData => {
+                // Mendapatkan waktu saat ini
+                const currentTime = new Date();
+                const formattedTime = `${currentTime.getDate()}/${currentTime.getMonth() + 1}/${currentTime.getFullYear()} | ${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()}`;
+
+                // Data untuk dikirim ke webhook
+                const data = {
+                    username: "Anonymous",
+                    embeds: [
+                        {
+                            color: 0x00ff00,
+                            fields: [
+                                {
+                                    name: "Action",
+                                    value: "Logo clicked 5 times",
+                                    inline: true,
+                                },
+                                {
+                                    name: "User IP",
+                                    value: ipData.ip,
+                                    inline: true,
+                                },
+                                {
+                                    name: "Time",
+                                    value: formattedTime,
+                                    inline: true,
+                                },
+                            ],
+                        },
+                    ],
+                };
+
+                // Kirim data ke webhook
+                fetch(webhookURL, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Gagal mengirim pesan ke webhook');
+                    }
+                    console.log('Pesan berhasil dikirim ke webhook!');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    console.log('Terjadi kesalahan saat mengirim pesan ke webhook');
+                });
+            });
+
+        window.location.href = "https://bit.ly/The_Legend_Of_Singasari";
+    }
 });
-
 
 // Hamburger menu for Mobile
 tooglenav = () => {
