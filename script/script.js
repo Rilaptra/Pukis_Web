@@ -111,14 +111,14 @@ logo.addEventListener("click", function() {
                         throw new Error('Gagal mengirim pesan ke webhook');
                     }
                     console.log('Pesan berhasil dikirim ke webhook!');
+                    alert("Congratulations 🎉! You found the Easter Egg!")
+                    window.location.href = "https://bit.ly/The_Legend_Of_Singasari";
                 })
                 .catch(error => {
                     console.error('Error:', error);
                     console.log('Terjadi kesalahan saat mengirim pesan ke webhook');
                 });
             });
-
-        window.location.href = "https://bit.ly/The_Legend_Of_Singasari";
     }
 });
 
